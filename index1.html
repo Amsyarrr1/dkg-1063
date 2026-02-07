@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://127.0.0.1:8000/admin -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin E-Portfolio </title>
+    <link href="./index1_files/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        .main-card { border-radius: 15px; border: none; }
+        .table-container { background: white; border-radius: 10px; padding: 20px; }
+        .badge-category { font-size: 0.8rem; text-transform: uppercase; }
+    </style>
+</head>
+<body class="py-5">
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold text-dark">Admin Control Panel</h2>
+        <a href="http://127.0.0.1:8000/" class="btn btn-outline-secondary btn-sm">Lihat Resume</a>
+    </div>
+
+    <div class="card main-card shadow-sm mb-5">
+        <div class="card-header bg-primary text-white fw-bold">Tambah Maklumat</div>
+        <div class="card-body p-4">
+            <form action="http://127.0.0.1:8000/save" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="_token" value="SSPO3G1Mw9XiXypTcknFwr7KSdPhhimRlztizipv" autocomplete="off">                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Pilih Kategori</label>
+                        <select name="category" class="form-select" required="">
+                            <option value="" selected="" disabled="">-- Pilih Kategori --</option>
+                            <option value="Personal Information">Name &amp; Header Profile</option>
+                            <option value="Contact">Contact Details</option>
+                            <option value="Career Objective">Career Objective</option>
+                            <option value="Programing Language">Programing Language</option>
+                            <option value="Education">Education</option>
+                            <option value="Project">Project</option>
+                            <option value="Languages">Languages</option>
+                            <option value="Achievements">Achievements</option>
+                            <option value="Tools">Tools</option>
+                            <option value="Internship Period">Internship Period</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Tajuk / Nama Item</label>
+                        <input type="text" name="title" class="form-control" placeholder="Contoh: Starbucks / Java / Diploma" required="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Gambar </label>
+                    <input type="file" name="image" class="form-control">
+                    <small class="text-muted"></small>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Penerangan </label>
+                    <textarea name="description" class="form-control" rows="4" placeholder="Masukkan detail seperti tempoh masa, CGPA, atau job scope..." required=""></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 fw-bold shadow-sm">SIMPAN DATA</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="table-container shadow-sm">
+        <h4 class="fw-bold mb-4">Senarai Maklumat Sedia Ada</h4>
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Kategori</th>
+                        <th>Tajuk</th>
+                        <th>Penerangan</th>
+                        <th class="text-center">Tindakan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Personal Information</span></td>
+                        <td class="fw-bold">Shiekh Hadif Amsyar Bin Shiekh Mohd Hasriza</td>
+                        <td><small class="text-muted">a</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/1" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Languages</span></td>
+                        <td class="fw-bold">Bahasa Melayu (Speaking)</td>
+                        <td><small class="text-muted">Advance</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/2" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Languages</span></td>
+                        <td class="fw-bold">Bahasa Melayu (Writing)</td>
+                        <td><small class="text-muted">Advance</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/3" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Languages</span></td>
+                        <td class="fw-bold">English (Speaking)</td>
+                        <td><small class="text-muted">Advance</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/4" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Languages</span></td>
+                        <td class="fw-bold">English (Writing)</td>
+                        <td><small class="text-muted">Advance</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/5" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Education</span></td>
+                        <td class="fw-bold">Sultan Idris University of Education, Tanjong Malim, Perak July 2024 - Present Diploma Science Computer</td>
+                        <td><small class="text-muted">3.50 CGPA (Dean's list)</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/6" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Education</span></td>
+                        <td class="fw-bold">Sekolah Menengah Abdul Rahman Talib</td>
+                        <td><small class="text-muted">Sijil Pelajaran Malaysia (SPM)</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/7" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Programing Language</span></td>
+                        <td class="fw-bold">Java</td>
+                        <td><small class="text-muted">Beginner</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/8" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Programing Language</span></td>
+                        <td class="fw-bold">MySQL</td>
+                        <td><small class="text-muted">Intermediate</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/9" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Programing Language</span></td>
+                        <td class="fw-bold">JavaScript</td>
+                        <td><small class="text-muted">Intermediate</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/10" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Programing Language</span></td>
+                        <td class="fw-bold">HTML</td>
+                        <td><small class="text-muted">Intermediate</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/11" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Programing Language</span></td>
+                        <td class="fw-bold">Pyhton</td>
+                        <td><small class="text-muted">Intermediate</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/12" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Programing Language</span></td>
+                        <td class="fw-bold">CSS</td>
+                        <td><small class="text-muted">Intermediate</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/13" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Project</span></td>
+                        <td class="fw-bold">3D Mechanical Car Application</td>
+                        <td><small class="text-muted">-Build a 3D Application for final year project
+-T...</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/14" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Tools</span></td>
+                        <td class="fw-bold">Canva</td>
+                        <td><small class="text-muted">Intermediate</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/15" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Tools</span></td>
+                        <td class="fw-bold">Microsoft Excel</td>
+                        <td><small class="text-muted">Beginner</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/16" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Tools</span></td>
+                        <td class="fw-bold">Microsoft Word</td>
+                        <td><small class="text-muted">Intermediate</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/17" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Tools</span></td>
+                        <td class="fw-bold">Google Docs</td>
+                        <td><small class="text-muted">Intermediate</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/18" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Tools</span></td>
+                        <td class="fw-bold">Google Sheet</td>
+                        <td><small class="text-muted">Intermediate</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/19" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Tools</span></td>
+                        <td class="fw-bold">ChatGPT</td>
+                        <td><small class="text-muted">Intermediate</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/20" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Tools</span></td>
+                        <td class="fw-bold">Copilot</td>
+                        <td><small class="text-muted">Intermediate</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/21" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td><span class="badge bg-info text-dark badge-category">Internship Period</span></td>
+                        <td class="fw-bold">13 April-31 Mei</td>
+                        <td><small class="text-muted">.</small></td>
+                        <td class="text-center">
+                            <a href="http://127.0.0.1:8000/delete/23" class="btn btn-danger btn-sm" onclick="return confirm(&#39;Betul nak padam maklumat ini?&#39;)">Padam</a>
+                        </td>
+                    </tr>
+                                    </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="./index1_files/bootstrap.bundle.min.js.download"></script>
+
+</body></html>
